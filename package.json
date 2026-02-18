@@ -1,0 +1,13 @@
+{
+  "name": "3d-print-pricer",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "setup": "pnpm install && mkdir -p node_modules/@app && ln -sf ../../packages/core node_modules/@app/core && pnpm --filter @app/core build",
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:coverage": "pnpm -r test:coverage"
+  }
+}
