@@ -1,0 +1,28 @@
+# From root directory
+
+# Run all tests
+pnpm test
+
+# Run with coverage
+pnpm test:coverage
+
+# Run specific package
+pnpm --filter @app/core test
+pnpm --filter @app/api test
+pnpm --filter @app/web test
+
+# Watch mode (during development)
+pnpm --filter @app/core test -- --watch
+
+#ultima agregacion para que funcione el test de la webpage
+
+cd ~/desarrollo/3d-print-pricer
+
+# Install all dependencies globally in the workspace
+pnpm install
+
+# Verify vitest is installed
+pnpm list vitest
+
+# Try running tests again
+pnpm --filter @app/web test
