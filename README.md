@@ -81,4 +81,15 @@ pnpm build
 pnpm --filter @app/web build
 pnpm --filter @app/api build
 
+#Para correr el proyecto y probarlo
+desde el root con 3 terminales
+terminal 1
+pnpm --filter @app/core dev
+terminal 2 
+pnpm --filter @app/api dev
+terminal 3
+pnpm --filter @app/web dev
 
+#si funciona abrir la app en:
+http://localhost:5173
+http://localhost:5174/quote
