@@ -1,6 +1,6 @@
 # 3D Print Pricer
 
-A full-stack monorepo aplicacion para calcular el costo y un margen de ganancia en impresiones 3d.
+aplicacion monorepo para calcular el costo y un margen de ganancia en impresiones 3d.
 
 ## Features
 
@@ -37,9 +37,9 @@ A full-stack monorepo aplicacion para calcular el costo y un margen de ganancia 
 │ └── src/ 
 └── pnpm-workspace.yaml
 
-## Quick Start
+## Inicio
 
-### Prerequisites
+### Requisitos
 
 - Node.js 20+ (or via WSL on Windows 11)
 - pnpm `npm install -g pnpm`
@@ -47,21 +47,30 @@ A full-stack monorepo aplicacion para calcular el costo y un margen de ganancia 
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/3d-print-pricer.git
+git clone https://github.com/Wrathammer/3d-print-pricer.git
+
 cd 3d-print-pricer
-pnpm setup
+
+pnpm install
+# Crear el symlink del core
+mkdir -p node_modules/@app
+ln -sf ../../packages/core node_modules/@app/core
+
+# Compilar core
+pnpm --filter @app/core build
 
 ### Inicio
 pnpm dev
+#todo junto
 ### de forma individual
-# Terminal 1: API (port 3001)
-pnpm --filter @app/api dev
-
-# Terminal 2: Web (port 5173)
-pnpm --filter @app/web dev
-
-# Terminal 3: Core in watch mode
+#Para correr el proyecto y probarlo
+desde el root con 3 terminales
+terminal 1
 pnpm --filter @app/core dev
+terminal 2 
+pnpm --filter @app/api dev
+terminal 3
+pnpm --filter @app/web dev
 ### Testing
 # Run all tests
 pnpm test
@@ -80,15 +89,6 @@ pnpm build
 # Build for production
 pnpm --filter @app/web build
 pnpm --filter @app/api build
-
-#Para correr el proyecto y probarlo
-desde el root con 3 terminales
-terminal 1
-pnpm --filter @app/core dev
-terminal 2 
-pnpm --filter @app/api dev
-terminal 3
-pnpm --filter @app/web dev
 
 #si funciona abrir la app en:
 http://localhost:5173
